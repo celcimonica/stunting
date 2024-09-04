@@ -1,336 +1,318 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Top Navigation</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>PESTUN</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <!-- Favicons -->
+  <link href="assets/img/kominfo-removebg-preview.png" rel="icon">
+  <link href="assets/img/kominfo-removebg-preview.png" rel="kominfo">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Medilab
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
-<body class="hold-transition layout-top-nav">
-<div class="wrapper">
 
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
-    <div class="container">
-      <!-- <a href="../../index3.html" class="navbar-brand"> -->
-        <img src="../../dist/img/logo stunting.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Pencegahan Stunting</span>
-      </a>
+<body class="index-page">
 
-      <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <header id="header" class="header sticky-top">
 
-      <div class="collapse navbar-collapse order-3" id="navbarCollapse">
-        <!-- Left navbar links -->
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            {{-- <a href="{{ route('anak.index')}}" class="nav-link {{ ($title==='anak')?'active':''}}">Home</a> --}}
-            {{-- <a href="{{ route('anak.index') }}" class="nav-link {{ ($title==='anak') ? 'active' : '' }}">Home</a> --}}
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">kominfo@acehtamiangkab.go.id. </a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>0811-675-618</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="https://twitter.com/kominfo_tamiang" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://m.facebook.com/profile.php?id=100064666326701" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/dinaskominfoacehtamiang" class="instagram"><i class="bi bi-instagram"></i></a>
+          {{-- <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a> --}}
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
 
-          <li class="nav-item">
-            <a href="contac.php" class="nav-link">Contact</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Pengecekan</a>
-            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-              <li><a href="cek.php" class="nav-link">Cek</a></a>
-              <li><a href="grafik.php" class="dropdown-item">Grafik</a></li>
-              <li><a href="{{ route('anak.index') }}" class="nav-link {{ ($title==='anak') ? 'active' : '' }}" class="dropdown-item">Tabel Data Anak</a></li>
+    <div class="branding d-flex align-items-center">
 
-              <li class="dropdown-divider"></li>
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center me-auto">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="assets/img/logo.png" alt=""> -->
+          <h1 class="sitename">PESTUN</h1>
+        </a>
 
-              <!-- Level two dropdown-->
-              <!-- <li class="dropdown-submenu dropdown-hover">
-                <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle"></a>
-                <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow"> -->
-                  <li>
-                    <!-- <a tabindex="-1" href="#" class="dropdown-item">level 2</a> -->
-                  </li>
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Home<br></a></li>
+            <li><a href="#about">About</a></li>
+            {{-- <li><a href="#about">Cek Apakah Anak Mengalami Stunting</a></li> --}}
+            <a class="cta-btn d-none d-sm-block" href="cek.php">Cek Apakah Anak Mengalami Stunting</a>
 
-                  <!-- Level three dropdown-->
-                  <!-- <li class="dropdown-submenu">
-                    <a id="dropdownSubMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">level 2</a>
-                    <ul aria-labelledby="dropdownSubMenu3" class="dropdown-menu border-0 shadow"> -->
-                      <!-- <li><a href="#" class="dropdown-item">3rd level</a></li>
-                      <li><a href="#" class="dropdown-item">3rd level</a></li> -->
-                    </ul>
-                  </li>
-                  <!-- End Level three -->
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
 
-                  <!-- <li><a href="#" class="dropdown-item">level 2</a></li>
-                  <li><a href="#" class="dropdown-item">level 2</a></li> -->
-                </ul>
-              </li>
-              <!-- End Level two -->
-            </ul>
-          </li>
-        </ul>
+        <a class="cta-btn d-none d-sm-block" href="#Kirim data anak">Masukkan Data Anak</a>
 
-        <!-- SEARCH FORM -->
-        {{-- <form class="form-inline ml-0 ml-md-3">
-          <div class="input-group input-group-sm">
-            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-            <div class="input-group-append">
-              <button class="btn btn-navbar" type="submit">
-                <i class="fas fa-search"></i>
-              </button>
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section light-background">
+
+      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+
+      <div class="container position-relative">
+
+        <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
+          <h2>WELCOME TO PESTUN</h2>
+          <p>Cegah Stunting Itu Penting!</p>
+        </div><!-- End Welcome -->
+
+        <div class="content row gy-4">
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
+              <h3>Apa si itu stunting?</h3>
+              <p>
+                Stunting adalah gagal tumbuh akibat kurangnya asupan gizi, di mana dalam jangka pendek dapat menyebabkan terganggunya perkembangan otak, metabolisme, dan pertumbuhan fisik pada anak.              </p>
+              <div class="text-center">
+                <a href="#about" class="more-btn"><span>Selengkapnya</span> <i class="bi bi-chevron-right"></i></a>
+              </div>
             </div>
+          </div><!-- End Why Box -->
+
+          <div class="col-lg-8 d-flex align-items-stretch">
+            <div class="d-flex flex-column justify-content-center">
+              <div class="row gy-4">
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container">
+
+        <div class="row gy-4 gx-5">
+
+          <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/img/apa-itu-stunting-1024x576.jpeg" class="img-fluid" alt="">
+            <a href="https://youtu.be/0hqR6jDUDj4?si=px2WjEHYHBNBYOoY" class="glightbox pulsating-play-btn"></a>
+        </div>
+       
+
+    
+            {{-- <div class="row gy-4 gx-5"> --}}
+    
+              <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
+                <img src="assets/img/Gejala-Stunting-pada-Anak-dan-Pencegahannya.jpg.webp" class="img-fluid" alt="">
+                <a href="https://youtu.be/xMObJG0mx6A?si=nJXA-gK1nCZv87CI" class="glightbox pulsating-play-btn"></a>
+              </div>
+
+          
+<center>
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <h3>Pencegahan</h3>
+            <p>
+                kunci utama cara mengatasi stunting pada anak adalah dengan mengetahui pengetahuan tentang cegah stunting.             </p>
+
+            </center>
+            <ul>
+              <li>
+                <i class="fa-solid fa-vial-circle-check"></i>
+                <div>
+                  <h5>1. Perbaiki stunting sebelum usia 2 tahun 
+                </h5>
+                  <p>Tips mengatasi stunting pada anak yang paling efektif adalah sebelum usia anak 2 tahun atau masih dalam masa 1.000 Hari Pertama Kehidupan  (HPK). Untuk itu, ibu hamil sudah harus menjaga asupan gizinya sejak awal pembuahan dan memerhatikan beberapa mikronutrien yang penting dalam kehamilan, seperti asam folat, kalsium, dan zat besi.  </p>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-pump-medical"></i>
+                <div>
+                  <h5>2. Beri olahan protein hewani pada MPASI</h5>
+                  <p>Kekeliruan cara pemberian MPASI bisa menganggu pertumbuhan bayi hingga pada akhirnya meningkatkan risiko stunting. Contoh, bayi hanya diberi MPASI berupa pure buah-buahan dan sayur, tanpa diberi protein hewani. Padahal makanan yang kaya protein hewani, seperti daging ayam, daging sapi, telur, serta susu sangat dibutuhkan bayi untuk pertumbuhan yang optimal. </p>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-heart-circle-xmark"></i>
+                <div>
+                  <h5>3. Perilaku hidup bersih dan sehat</h5>
+                  <p>
+                    Cara mengatasi stunting pada anak yang tidak boleh dilewatkan adalah menerapkan perilaku hidup bersih dan sehat (PHBS), seperti cuci tangan dengan sabun dan air mengalir, terutama sebelum dan makan serta habis melakukan aktivitas di kamar mandi. Tidak menjaga kebersihan diri bisa menyebabkan masalah kesehatan, seperti diare. Diare yang terus berulang dapat menyebabkan anak mengalami kurang gizi, dan akhirnya meningkatkan risiko stunting. </p>
+                </div>
+                <div class="text-center">
+                  <a href="https://yankes.kemkes.go.id/view_artikel/1388/mengenal-apa-itu-stunting" class="more-btn"><span>Selengkapnya</span> <i class="bi bi-chevron-right"></i></a>
+  
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+  
+    <!-- Appointment Section -->
+    <section id="Kirim data anak" class="Kirim data anak section">
+      <form action="{{ route('anak.store') }}" method="POST">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Kirim Data Anak</h2>
+        <p></p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <form action="forms/Kirim data anak.php" method="post" role="form" class="php-email-form">
+          <div class="row">
+            <div class="col-md-4 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Nama Anak" required="">
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="  Alamat" required="">
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder=" Umur Anak" required="">
+            </div>
+            
+            <div class="col-md-4 form-group mt-3 ">
+              <input type="tel" class="form-control" name="phone" id="phone" placeholder="No Handphone" required="">
+            </div>
+            <div class="col-md-4 form-group mt-3 ">
+              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Tinggi Badan" required="">
+            </div>
+            <div class="col-md-4 form-group mt-3 ">
+              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Berat Badan" required="">
+            </div>
+         
+          <div class="row">
+            <div class="col-md-4 form-group mt-3" >
+              <input type="datetime-local" name="date" class="form-control datepicker" id="date" placeholder="Tanggal Lahir" required="">
+            </div>
+            <div class="col-md-4 form-group mt-3">
+              <select name="department" id="department" class="form-select" required="">
+                <option value="">Jenis Kelamin</option>
+                <option value="Department 1">Laki-laki</option>
+                <option value="Department 2">Perempuan</option>
+                {{-- <option value="Department 3">Department 3</option> --}}
+              </select>
+            </div>
+            <div class="col-md-4 form-group mt-3">
+              <select name="department" id="department" class="form-select" required="">
+                <option value="">Apakah Anak Mengalami Stunting</option>
+                <option value="Department 1">Ya</option>
+                <option value="Department 2">Tidak</option>
+                {{-- <option value="Department 3">Department 3</option> --}}
+              </select>
+            </div>
+            {{-- <div class="col-md-4 form-group mt-3">
+              <select name="doctor" id="doctor" class="form-select" required="">
+                <option value="">Select Doctor</option>
+                <option value="Doctor 1">Doctor 1</option>
+                <option value="Doctor 2">Doctor 2</option>
+                <option value="Doctor 3">Doctor 3</option>
+              </select>
+            </div>
+          </div> --}}
+
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
+          </div>
+          <div class="mt-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your Kirim data anak request has been sent successfully. Thank you!</div>
+            <div class="text-center"><button type="submit">Kirim</button></div>
           </div>
         </form>
-      </div> --}}
 
-      <!-- Right navbar links -->
-      <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
-        <!-- Messages Dropdown Menu -->
-        <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
-            <!-- <i class="fas fa-comments"></i>
-            <span class="badge badge-danger navbar-badge">3</span> -->
-          </a>
-          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <a href="#" class="dropdown-item">
-              <!-- Message Start -->
-              <div class="media">
-                <img src="../../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-                <div class="media-body">
-                  <!-- <h3 class="dropdown-item-title">
-                    Brad Diesel -->
-                    <!-- <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                  </h3>
-                  <p class="text-sm">Call me whenever you can...</p>
-                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                </div>
-              </div> -->
-              <!-- Message End -->
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <!-- Message Start -->
-              <!-- <div class="media">
-                <img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                <div class="media-body">
-                  <h3 class="dropdown-item-title">
-                    John Pierce
-                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                  </h3>
-                  <p class="text-sm">I got your message bro</p>
-                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                </div>
-              </div> -->
-              <!-- Message End -->
-            <!-- </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item"> -->
-              <!-- Message Start -->
-              <!-- <div class="media">
-                <img src="../../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                <div class="media-body">
-                  <h3 class="dropdown-item-title">
-                    Nora Silvester
-                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                  </h3>
-                  <p class="text-sm">The subject goes here</p>
-                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                </div>
-              </div> -->
-              <!-- Message End -->
-            <!-- </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-          </div>
-        </li> -->
-        <!-- Notifications Dropdown Menu -->
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
-            <i class="far fa-bell"></i>
-            <span class="badge badge-warning navbar-badge">15</span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <span class="dropdown-header">15 Notifications</span>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fas fa-envelope mr-2"></i> 4 new messages
-              <span class="float-right text-muted text-sm">3 mins</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fas fa-users mr-2"></i> 8 friend requests
-              <span class="float-right text-muted text-sm">12 hours</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fas fa-file mr-2"></i> 3 new reports
-              <span class="float-right text-muted text-sm">2 days</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-            <i class="fas fa-th-large"></i> -->
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <!-- /.navbar -->
+      </div>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0"> Aksi Cegah Stunting<small></small></h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <!-- <li class="breadcrumb-item"><a href="#">Home</a></li> -->
-              <!-- <li class="breadcrumb-item"><a href="#">Layout</a></li> -->
-              <!-- <li class="breadcrumb-item active">Top Navigation</li> -->
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
+    </section><!-- /Kirim data anak Section -->
 
-    <!-- Main content -->
-    <div class="content">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Ciri-Ciri Stunting<p></h5>
+    
 
-                <p class="card-text">
-                Stunting adalah kondisi di mana pertumbuhan anak terhambat akibat malnutrisi kronis atau infeksi yang berulang. Anak yang mengalami stunting cenderung lebih pendek dari anak-anak seusianya. Stunting memiliki dampak jangka panjang terhadap kesehatan, perkembangan mental, dan kemampuan belajar anak. Berikut adalah beberapa ciri-ciri anak yang mengalami stunting:<p>
+    
+              <div ></div>
 
-1. Tinggi Pendek:
-Ciri utama stunting adalah tinggi badan anak yang jauh di bawah standar tinggi badan anak seusianya, sesuai dengan usia dan jenis kelamin.<p>
-2. Perkembangan Fisik yang Terhambat:
-Anak stunting mungkin memiliki tubuh yang kurus atau memiliki berat badan yang tidak proporsional dengan tinggi badan. Pertumbuhan otot dan tulang bisa juga terhambat.<p>
-3. Perkembangan Kognitif dan Mental yang Terhambat:
-Anak yang mengalami stunting cenderung memiliki kemampuan kognitif yang lebih rendah, yang dapat mempengaruhi kemampuan belajar dan perkembangan mental mereka.
-Anak<p>
-4. Perkembangan Motorik yang Lambat:
-Anak stunting cenderung mengalami keterlambatan dalam perkembangan motorik, seperti berjalan, berlari, atau berbicara, dibandingkan dengan anak-anak seusianya.<p>
-5. Sistem Imun yang Lemah:
-Anak stunting cenderung lebih sering sakit atau mengalami infeksi karena sistem kekebalan tubuh mereka yang lemah akibat malnutrisi.
-Mereka juga mungkin lebih rentan terhadap penyakit seperti diare dan infeksi saluran pernapasan.<p>
-<h3>Dampak Jangka Panjang Stunting:</h3>
-1. Penurunan kecerdasan<p></p>
-2. Penurunan produktivitas<p></p>
-3. Risiko penyakit kronis
-
-                </p>
-
-                <!-- <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a> -->
-              </div>
             </div>
 
-            <div class="card card-primary card-outline">
-              <div class="card-body">
-                <h5 class="card-title"></h5>
+          </div><!-- End Faq Column-->
 
-                <p class="card-text">
-                 
-                </p>
-                <!-- Blade Template -->
-                <img src="../../dist/img/logo.png" width="500">
-
-                <!-- <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a> -->
-              </div>
-            </div><!-- /.card -->
-          </div>
-          <!-- /.col-md-6 -->
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title m-0">Vidio Mengenai Stunting</h5>
-              </div>
-              <div class="card-body">
-                <!-- <h6 class="card-title">Special title treatment</h6> -->
-
-                <p class="card-text">Apakah kalian familiar dengan kata “stunting?” 
-                Kata ini beberapa kali muncul di media. Stunting artinya anak yang bertubuh pendek bukan? Bukannya memang normal jika ada anak yang tinggi dan pendek? Lalu mengapa hal ini sangat penting sampai sering muncul di media? Pertanyaan-pertanyaan ini akan segera kami jawab melalui video ini</p>
-                <!-- Blade Template -->
-            <video width="500" controls>
-            <source src="../../dist/img/Apa itu Stunting_.mp4" width="500" type="video/mp4">
-             <!-- <source src=<"{{ asset('../../dist/img/Apa itu Stunting_.mp4') }}" type="video/mp4"> -->
-            </video>
-                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-              </div>
-            </div>
-
-            <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h5 class="card-title m-0">4 Cara Mengatasi Masalah Stunting pada Balita</h5>
-              </div>
-              <div class="card-body">
-                <h6 class="card-title">“Pertumbuhan sang buah hati tidak hanya dipantau dari berat badan. Ibu juga perlu mengukur tinggi badan anak secara berkala untuk mencegah terjadinya stunting pada balita.”</h6>
-                <img src="../../dist/img/stunting_01.png" width="500">
-                <p class="card-text">Cara Mencegah Stunting pada Anak
-Perlu diketahui bahwa stunting pada balita bisa berlanjut hingga usia dewasa. Jadi, sebelum berdampak pada pertumbuhan dan perkembangan anak secara menyeluruh, kondisi stunting harus dicegah. Adapun upaya pencegahan yang bisa dilakukan yaitu 
-<class="bg-blue-500 p-2 rounded hover:bg-blue-700">Selengkapnya</class>
-
-
-                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-              </div>
-            </div>
-          </div>
-          <!-- /.col-md-6 -->
         </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+      </div>
 
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      Anything you want
+    </section><!-- /Faq Section -->
+
+   
+
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+      
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        <center>
+        <p> Designed by <a href="https://www.instagram.com/celcimonica/">Monicaa</a></p>
+        </center>
+      </div>
     </div>
-    <!-- Default to the left -->
-    <!-- <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved. -->
+
   </footer>
-</div>
-<!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-<!-- jQuery -->
-<script src="../../plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>

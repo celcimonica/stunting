@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Kunjungan extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'Nama_Pengunjung',
+        'Tanggal_Kunjungan',
+        'Keterangan',
+        'Alamat',
+    ];
 }
+

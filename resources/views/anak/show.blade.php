@@ -1,53 +1,62 @@
-@extends('layouts.template')
-@section('judulh1','Admin - layanan')
-@section('konten')
-<div class="col-md-6">
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your
-        input.<br><br>
-        <ul>
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
-    <div class="card card-primary">
-        <div class="card-header">
-            <h3 class="card-title">Data kayu</h3>
+@extends('layouts.layout')
+
+@section('title', 'Detail Anak') <!-- Judul halaman -->
+
+@section('content')
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Detail Data Anak</h1>
+    <p class="mb-4">Informasi lengkap dari data anak terpilih.</p>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Detail Anak</h6>
         </div>
-        <!-- /.card-header -->
-        <div class=" card-body">
-            <table>
-                <tr>
-                    <th>Nama kayu</th>
-                    <td>:</td>
-                    <td>{{ $data[0]->name }}</td>
-                </tr>
-                <tr>
-                    <th>harga</th>
-                    <td>:</td>
-                    <td>@money($data[0]->price)</td>
-                </tr>
-                <tr>
-                    <th>Stock</th>
-                    <td>:</td>
-                    <td>{{ $data[0]->stock }}</td>
-                </tr>
-                <tr>
-                    <th>Jenis</th>
-                    <td>:</td>
-                    <td>{{ $data[0]->jeniskategori }}</td>
-                </tr>
-                <tr>
-                    <th>Deskripsi</th>
-                    <td>:</td>
-                    <td>{{ $data[0]->description}}</td>
-                </tr>
-            </table>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-sm-3 font-weight-bold">Nama Anak:</div>
+                <div class="col-sm-9">{{ $anak->Nama_Anak }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-3 font-weight-bold">Tanggal Lahir:</div>
+                <div class="col-sm-9">{{ $anak->Tanggal_Lahir }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-3 font-weight-bold">Jenis Kelamin:</div>
+                <div class="col-sm-9">{{ $anak->Jenis_Kelamin }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-3 font-weight-bold">Tinggi Badan:</div>
+                <div class="col-sm-9">{{ $anak->Tinggi_Badan }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-3 font-weight-bold">Berat Badan:</div>
+                <div class="col-sm-9">{{ $anak->Berat_Badan }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-3 font-weight-bold">Status Gizi:</div>
+                <div class="col-sm-9">{{ $anak->Status_Gizi }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-3 font-weight-bold">Alamat:</div>
+                <div class="col-sm-9">{{ $anak->Alamat }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-3 font-weight-bold">Nama Orang Tua:</div>
+                <div class="col-sm-9">{{ $anak->Nama_Orang_Tua }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-3 font-weight-bold">No Telepon:</div>
+                <div class="col-sm-9">{{ $anak->No_Telepon_Orang_Tua }}</div>
+            </div>
+
+            <div class="text-right">
+                <a href="{{ url('/anak') }}" class="btn btn-secondary">Kembali</a>
+            </div>
         </div>
-        <!-- /.card-body -->
     </div>
+
 </div>
 @endsection

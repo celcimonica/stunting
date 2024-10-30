@@ -15,13 +15,12 @@ return new class extends Migration
     {
         Schema::create('kunjungans', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('anak_id');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('anak_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();  // Bisa kosong   
+            $table->string('Nama_Pengunjung');
             $table->date('Tanggal_Kunjungan');
-            $table->decimal('Tinggi_Badan', 5, 2);
-            $table->decimal('Berat_Badan', 5, 2);
-            $table->enum('Status_Gizi', ['Stunting', 'Normal']);
-            $table->text('Catatan_Kesehatan')->nullable();
+            $table->text('Keterangan');
+            $table->text('Alamat');
             $table->timestamps();
         });
         Schema::table('kunjungans',function(Blueprint $table){

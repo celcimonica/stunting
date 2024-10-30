@@ -1,112 +1,110 @@
-@extends('layouts.template')
-@section('tambahanCSS')
-<!-- DataTables -->
-<link rel="stylesheet" href="plugins/datatables-
-bs4/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="plugins/datatables-
-responsive/css/responsive.bootstrap4.min.css">
-<link rel="stylesheet" href="plugins/datatables-
-buttons/css/buttons.bootstrap4.min.css">
-<!-- Toastr -->
-<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
-@endsection
-@section('judulh1','Admin - anak')
-@section('konten')
-<div class="col-md-12">
-    <div class="card card-info">
-        <div class="card-header">
-            <h2 class="card-title">Data Anak</h2>
-            <a type="button" class="btn btn-success float-right" href="{{route('anak.create') }}">
-                <i class=" fas fa-plus"></i> Tambah anak
-            </a>
+@extends('layouts.layout') <!-- Extends the layout.blade.php -->
+
+@section('title', 'Dashboard') <!-- Sets the page title -->
+
+@section('content')
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Tables Data Anak</h1>
+    <p class="mb-4">Daftar informasi anak terdaftar.</p>
+    <!-- DataTables Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Data Table</h6>
         </div>
-        <!-- /.card-header -->
+        @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @elseif (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+    
         <div class="card-body">
-            <!-- <table id="example1" class="table table-bordered table-striped "> -->
-            <!-- <table class="table-info"> -->
-            <table class="table table-success table-striped">
-            <!-- <table class="table table-bordered border-primary"> -->
-                <thead>
-          <tr>
-                        <th>No</th>
-                        <th>Nama Anak</th>
-                        <th>Tanggal Lahir</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Alamat</th>
-                        <th>Nama Ortu</th>
-                        <th>No hp ortu</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($data as $dt)
-                    <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ $dt->nama }}</td>
-                        <td> @money($dt->price) </td>
-                        <td>{{ ($dt->stock) }}</td>
-                        <td>{{ $dt->jeniskategori }}</td>
-                        <td>{{ $dt->description }}</td>
-                        <td>
-                            <div class="btn-group">
-                                <form action="{{ route('anak.destroy',$dt->id)}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">
-                                        <i class=" fas fa-trash"></i>
-                                    </button>
-                                </form>
-                                <a type="button" class="btn btn-warning" href="{{ route('anak.edit',$dt->id) }}">
-                                    <i class=" fas fa-edit"></i>
-                                </a>
-                                <a type="button" class="btn btn-success" href="{{ route('anak.show',$dt->id) }}">
-                                    <i class=" fas fa-eye"></i>
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Anak</th>
+                            <th>Tanggal Lahir</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Tinggi Badan</th>
+                            <th>Berat Badan</th>
+                            <th>Status Gizi</th>
+                            <th>Alamat</th>
+                            <th>Nama Orang Tua</th>
+                            <th>No Telepon</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($data as $dt)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $dt->Nama_Anak }}</td>
+                            <td>{{ $dt->Tanggal_Lahir }}</td>
+                            <td>{{ $dt->Jenis_Kelamin }}</td>
+                            <td>{{ $dt->Tinggi_Badan }}</td>
+                            <td>{{ $dt->Berat_Badan }}</td>
+                            <td>{{ $dt->Status_Gizi }}</td>
+                            <td>{{ $dt->Alamat }}</td>
+                            <td>{{ $dt->Nama_Orang_Tua }}</td>
+                            <td>{{ $dt->No_Telepon_Orang_Tua }}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <!-- Form Delete -->
+                                    <form action="{{ route('anak.destroy', $dt->id) }}" method="POST" 
+                                          onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
+
+                                    <a type="button" class="btn btn-success" href="{{ route('anak.show', $dt->id) }}">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    
+                                    <a href="{{ route('anak.pdf', $dt->id) }}" class="btn btn-primary">
+                                        <i class="fas fa-file-pdf"></i> Cetak PDF
+                                    </a>
+                                                                        
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+
 </div>
 @endsection
+
 @section('tambahanJS')
-<!-- DataTables & Plugins -->
-<script src="plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="plugins/datatables-
-responsive/js/dataTables.responsive.min.js"></script>
-<script src="plugins/datatables-
-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="plugins/jszip/jszip.min.js"></script>
-<script src="plugins/pdfmake/pdfmake.min.js"></script>
-<script src="plugins/pdfmake/vfs_fonts.js"></script>
-<script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-<!-- Toastr -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js">
-    </script>
-        @endsection
-    @section('tambahScript') <script>
-        $(function() {
-            $("#example1").DataTable({
-                "responsive": true,
-                "lengthChange": true,
-                "autoWidth": false,
-                "responsive": true,
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        });
-    @if($message = Session::get('success'))
-    toastr.success("{{ $message}}");
-    @elseif($message = Session::get('updated'))
-    toastr.warning("{{ $message}}");
-    @elseif($message = Session::get('deleted'))
-    toastr.error("{{ $message}}");
-    @endif
+<!-- jQuery -->
+<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+<!-- Bootstrap JS -->
+<script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<!-- jQuery Easing -->
+<script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+<!-- SB Admin 2 -->
+<script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
+<!-- DataTables -->
+<script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+
+<!-- DataTables Initialization -->
+<script>
+    $(document).ready(function () {
+        $('#dataTable').DataTable();
+    });
 </script>
 @endsection

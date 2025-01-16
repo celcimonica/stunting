@@ -50,11 +50,7 @@ Route::get('/', function () {
     ]);
    });
 
-//    Route::get('cek.php', function () {
-//     return view('cek',[
-//     "title"=>"cek"
-//     ]);
-//    });
+
    Route::get('grafik.php', function () {
     return view('grafik',[
     "title"=>"grafik"
@@ -68,10 +64,10 @@ Route::middleware('auth')->get('/dashboard', function () {
 })->name('dashboard');
 
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 
 // Route untuk menampilkan semua kunjungan
-Route::get('/kunjungan', [KunjunganController::class, 'index'])->name('kunjungan.index');
+Route::get('/kunjungan', [KunjunganController::class, 'index'])->name('kunjungan.index')->middleware('auth');
 
 // Route untuk menampilkan form tambah data kunjungan
 Route::get('/kunjungan/create', [KunjunganController::class, 'create'])->name('kunjungan.create');
@@ -88,11 +84,18 @@ Route::get('/kunjungan/{id}', [KunjunganController::class, 'show'])->name('kunju
 Route::resource('/anak',AnakController::class)->except('destroy','create','show','update'.'edit');
 Route::get('/anak/create', [AnakController::class, 'create'])->name('anak.create');
 Route::post('/anak/store', [AnakController::class, 'store'])->name('anak.store');
+// Route untuk halaman edit
+Route::get('/anak/{id}/edit', [AnakController::class, 'edit'])->name('anak.edit');
+
+// Route untuk proses update
+Route::put('/anak/{id}', [AnakController::class, 'update'])->name('anak.update');
 
 
 Route::get('/anak/{id}', [AnakController::class, 'show'])->name('anak.show');
 Route::delete('/anak/{id}', [AnakController::class, 'destroy'])->name('anak.destroy');
 Route::get('/anak/pdf/{id}', [AnakController::class, 'printPDF'])->name('anak.pdf');
+Route::get('/cetak-anak', [AnakController::class, 'cetak'])->withoutMiddleware('auth');
+Route::get('/cetak-semua-anak', [AnakController::class, 'cetakSemua']);
 
 Route::resource('/user',UserController::class);
 Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
@@ -102,4 +105,3 @@ Route::get('/users', [UserController::class, 'index'])->name('user.index')->midd
 Route::get('login',[LoginController::class,'loginView'])->name('login');
 Route::post('login',[LoginController::class,'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-// Route::post('/logout',[LoginController::class,'logout'])->name('auth.logout');

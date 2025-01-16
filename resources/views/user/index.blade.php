@@ -24,7 +24,6 @@
                         <th>No</th>
                         <th>Name</th>
                         <th>Username</th>
-                        <th>Role</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,7 +32,6 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $dt->name }}</td>
                         <td>{{ $dt->username }}</td>
-                        <td>{{ $dt->role }}</td>
                     </tr>
                     @endforeach
                 </tbody>

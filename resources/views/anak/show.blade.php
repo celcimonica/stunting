@@ -19,6 +19,10 @@
                 <div class="col-sm-3 font-weight-bold">Nama Anak:</div>
                 <div class="col-sm-9">{{ $anak->Nama_Anak }}</div>
             </div>
+            {{-- <div class="row mb-3">
+                <div class="col-sm-3 font-weight-bold">Tanggal Pendaftaran Anak:</div>
+                <div class="col-sm-9">{{ $anak->tanggal_pendataran }}</div>
+            </div> --}}
             <div class="row mb-3">
                 <div class="col-sm-3 font-weight-bold">Tanggal Lahir:</div>
                 <div class="col-sm-9">{{ $anak->Tanggal_Lahir }}</div>
@@ -28,16 +32,16 @@
                 <div class="col-sm-9">{{ $anak->Jenis_Kelamin }}</div>
             </div>
             <div class="row mb-3">
+                <div class="col-sm-3 font-weight-bold">Umur:</div>
+                <div class="col-sm-9">{{ $anak->Umur }} Tahun</div> <!-- Menambahkan kata 'Tahun' -->
+            </div>            
+            <div class="row mb-3">
                 <div class="col-sm-3 font-weight-bold">Tinggi Badan:</div>
                 <div class="col-sm-9">{{ $anak->Tinggi_Badan }}</div>
             </div>
             <div class="row mb-3">
                 <div class="col-sm-3 font-weight-bold">Berat Badan:</div>
                 <div class="col-sm-9">{{ $anak->Berat_Badan }}</div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-sm-3 font-weight-bold">Status Gizi:</div>
-                <div class="col-sm-9">{{ $anak->Status_Gizi }}</div>
             </div>
             <div class="row mb-3">
                 <div class="col-sm-3 font-weight-bold">Alamat:</div>

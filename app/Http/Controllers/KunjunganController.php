@@ -10,6 +10,8 @@ class KunjunganController extends Controller
     // Menampilkan daftar kunjungan
     public function index()
     {
+        \Carbon\Carbon::setLocale('id');
+
         $data = Kunjungan::all(); // Ambil semua data kunjungan
         return view('kunjungan.index', [
             'title' => 'Data Kunjungan',
@@ -33,7 +35,6 @@ public function store(Request $request)
     // Validasi input
     $validated = $request->validate([
        'Nama_Pengunjung' => 'required',
-        'Tanggal_Kunjungan' => 'required|date',
         'Keterangan' => 'nullable|string',     
         'Alamat' => 'nullable|string',
     ]);

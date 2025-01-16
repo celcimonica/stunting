@@ -7,8 +7,8 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Tables Data Anak</h1>
-    <p class="mb-4">Daftar informasi anak terdaftar.</p>
+    <h1 class="h3 mb-2 text-gray-800">Tables Data Pengunjung</h1>
+    <p class="mb-4">Daftar informasi pengunjung terdaftar.</p>
     <!-- DataTables Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -42,7 +42,7 @@
                             <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $dt->Nama_Pengunjung }}</td>
-                            <td>{{ $dt->Tanggal_Kunjungan }}</td>
+                            <td>{{ \Carbon\Carbon::parse($dt->created_at)->translatedFormat('l, d F Y') }}</td>
                             <td>{{ $dt->Keterangan }}</td>
                             <td>{{ $dt->Alamat }}</td>
                             <td>

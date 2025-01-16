@@ -3,12 +3,14 @@
 <head>
   <!-- Design by foolishdeveloper.com -->
     <title>Login User</title>
- 
+    <link href="{{ asset('assets/img/stuntingg-removebg-preview.png') }}" rel="icon">
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <!--Stylesheet-->
     <style media="screen">
+        
       *,
 *:before,
 *:after{
@@ -149,12 +151,20 @@ button{
     </div>
 @endif
 
-<form action="/login" method="post">
+<form action="/login" method="post"><div class="form-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6">
+                <div class="form-container">
+                    <h3 class="title">Login Form</h3>
+                    <form class="form-horizontal">
+                       
+                        </div>
     @csrf
     <label for="username">Username</label>
     <input type="text" 
            class="form-control @error('username') is-invalid @enderror" 
-           placeholder="username" 
+           placeholder="" 
            id="username" 
            name="username" 
            value="{{ old('username') }}">
@@ -168,7 +178,7 @@ button{
     <label for="password">Password</label>
     <input type="password" 
            class="form-control" 
-           placeholder="Password" 
+           placeholder="" 
            id="password" 
            name="password">
 

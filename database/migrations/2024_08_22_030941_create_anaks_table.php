@@ -16,12 +16,13 @@ return new class extends Migration
         Schema::create('anaks', function (Blueprint $table) {
             $table->id();
             $table->string('Nama_Anak');
+            $table->timestamp('tanggal_pendaftaran')->nullable();
             $table->date('Tanggal_Lahir');
             $table->enum('Jenis_Kelamin', ['Laki-laki', 'Perempuan']);
+            $table->unsignedInteger('Umur')->nullable(); // Tambahkan kolom umur
             $table->text('Alamat');
             $table->decimal('Tinggi_Badan', 5, 2);
             $table->decimal('Berat_Badan', 5, 2);
-            $table->enum('Status_Gizi', ['Stunting']);
             $table->string('Nama_Orang_Tua');
             $table->string('No_Telepon_Orang_Tua');
             $table->timestamps();

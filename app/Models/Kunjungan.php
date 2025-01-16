@@ -11,7 +11,7 @@ class Kunjungan extends Model
 
     protected $fillable = [
         'Nama_Pengunjung',
-        'Tanggal_Kunjungan',
+        'tanggal_kunjungan',
         'Keterangan',
         'Alamat',
     ];

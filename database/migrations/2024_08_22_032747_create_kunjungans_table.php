@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('anak_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();  // Bisa kosong   
             $table->string('Nama_Pengunjung');
-            $table->date('Tanggal_Kunjungan');
+            $table->timestamp('tanggal_kunjungan')->nullable();
             $table->text('Keterangan');
             $table->text('Alamat');
             $table->timestamps();

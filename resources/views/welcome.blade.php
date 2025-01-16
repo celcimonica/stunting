@@ -71,13 +71,13 @@
             <li><a href="#about">About</a></li>
             {{-- <li><a href="#about">Cek Apakah Anak Mengalami Stunting</a></li> --}}
             <a class="cta-btn d-none d-sm-block" href="{{ url('/pengukuran') }}">Cek Apakah Anak Mengalami Stunting</a>
-            <a class="cta-btn d-none d-sm-block" href="{{ route('kunjungan.create') }}">Isi Data Kunjungan</a>
+            {{-- <a class="cta-btn d-none d-sm-block" href="{{ route('kunjungan.create') }}">Isi Data Kunjungan</a> --}}
 
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="cta-btn d-none d-sm-block" href="{{ route('anak.create') }}">Masukkan Data Anak yang Mengalami Stunting</a>
+        {{-- <a class="cta-btn d-none d-sm-block" href="{{ route('anak.create') }}">Masukkan Data Anak yang Mengalami Stunting</a> --}}
       </div>
 
     </div>
@@ -147,24 +147,24 @@
             </center>
             <ul>
               <li>
-                <i class="fa-solid fa-vial-circle-check"></i>
+                {{-- <i class="fa-solid fa-vial-circle-check"></i> --}}
                 <div>
-                  <h5>1. Perbaiki stunting sebelum usia 2 tahun 
+                  <h5> Perbaiki stunting sebelum usia 2 tahun 
                 </h5>
                   <p>Tips mengatasi stunting pada anak yang paling efektif adalah sebelum usia anak 2 tahun atau masih dalam masa 1.000 Hari Pertama Kehidupan  (HPK). Untuk itu, ibu hamil sudah harus menjaga asupan gizinya sejak awal pembuahan dan memerhatikan beberapa mikronutrien yang penting dalam kehamilan, seperti asam folat, kalsium, dan zat besi.  </p>
                 </div>
               </li>
               <li>
-                <i class="fa-solid fa-pump-medical"></i>
+                {{-- <i class="fa-solid fa-pump-medical"></i> --}}
                 <div>
-                  <h5>2. Beri olahan protein hewani pada MPASI</h5>
+                  <h5> Beri olahan protein hewani pada MPASI</h5>
                   <p>Kekeliruan cara pemberian MPASI bisa menganggu pertumbuhan bayi hingga pada akhirnya meningkatkan risiko stunting. Contoh, bayi hanya diberi MPASI berupa pure buah-buahan dan sayur, tanpa diberi protein hewani. Padahal makanan yang kaya protein hewani, seperti daging ayam, daging sapi, telur, serta susu sangat dibutuhkan bayi untuk pertumbuhan yang optimal. </p>
                 </div>
               </li>
               <li>
-                <i class="fa-solid fa-heart-circle-xmark"></i>
+                {{-- <i class="fa-solid fa-heart-circle-xmark"></i> --}}
                 <div>
-                  <h5>3. Perilaku hidup bersih dan sehat</h5>
+                  <h5>Perilaku hidup bersih dan sehat</h5>
                   <p>
                     Cara mengatasi stunting pada anak yang tidak boleh dilewatkan adalah menerapkan perilaku hidup bersih dan sehat (PHBS), seperti cuci tangan dengan sabun dan air mengalir, terutama sebelum dan makan serta habis melakukan aktivitas di kamar mandi. Tidak menjaga kebersihan diri bisa menyebabkan masalah kesehatan, seperti diare. Diare yang terus berulang dapat menyebabkan anak mengalami kurang gizi, dan akhirnya meningkatkan risiko stunting. </p>
                 </div>

@@ -19,10 +19,10 @@
                 <div class="col-sm-3 font-weight-bold">Nama kunjungan:</div>
                 <div class="col-sm-9">{{ $kunjungan->Nama_Pengunjung }}</div>
             </div>
-            <div class="row mb-3">
-                <div class="col-sm-3 font-weight-bold">Tanggal Lahir:</div>
-                <div class="col-sm-9">{{ $kunjungan->Tanggal_Kunjungan }}</div>
-            </div>
+            {{-- <div class="row mb-3">
+                <div class="col-sm-3 font-weight-bold">Tanggal Kunjungan:</div>
+                <div class="col-sm-9">{{ $kunjungan->tanggal_kunjungan }}</div>
+            </div> --}}
             <div class="row mb-3">
                 <div class="col-sm-3 font-weight-bold">Keterangan:</div>
                 <div class="col-sm-9">{{ $kunjungan->Keterangan }}</div>

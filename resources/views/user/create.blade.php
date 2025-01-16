@@ -43,14 +43,6 @@
                 <label for="password">Password</label>
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
-            <div class="form-group">
-                <label for="role">Role</label>
-                <select class="form-control" id="role" name="role" required>
-                    <option value="" disabled selected>Pilih Role</option>
-                    <option value="operator">Operator</option>
-                    <option value="admin">Admin</option>
-                </select>
-            </div>
             <button type="submit" class="btn btn-primary">Simpan Petugas</button>
             <a href="{{ route('user.index') }}" class="btn btn-secondary">Kembali</a>
         </form>

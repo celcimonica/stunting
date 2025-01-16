@@ -16,7 +16,7 @@
     </li>
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{ route('user.index') }}">
-            <i class="fas fa-fw fa-users"></i>
+            <i class="fas fa-fw fa-user"></i>
             <span>Data User</span>
         </a>
     </li>

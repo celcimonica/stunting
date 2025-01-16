@@ -29,6 +29,11 @@
             <td>{{ $data->Nama_Anak }}</td>
         </tr>
         <tr>
+            <th>Tanggal Pendaftaran Anak</th>
+            <td>{{ \Carbon\Carbon::parse($data->tanggal_pendaftaran)->format('d F Y') }}</td>
+        </tr>
+        
+        <tr>
             <th>Tanggal Lahir</th>
             <td>{{ $data->Tanggal_Lahir }}</td>
         </tr>
@@ -42,10 +47,7 @@
         </tr> <tr>
             <th>Berat_Badan</th>
             <td>{{ $data->Berat_Badan }}</td>
-        </tr> <tr>
-            <th>Status_Gizi</th>
-            <td>{{ $data->Status_Gizi }}</td>
-        </tr>
+        </tr> 
         <tr>
             <th>Alamat</th>
             <td>{{ $data->Alamat }}</td>

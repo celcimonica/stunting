@@ -5,19 +5,41 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;  // Import PDF facade
 use App\Models\Anak;
-
+use Carbon\Carbon;
 
 class AnakController extends Controller
 {
-    public function index()
-    {
-        \Carbon\Carbon::setLocale('id');
+    public function index(Request $request)
+{
+    \Carbon\Carbon::setLocale('id');
 
-        return view('Anak.index',[
-            "title"=>"Data Anak",
-            "data"=>Anak::all()
-        ]);
+    // Ambil input filter tanggal
+    $startDate = $request->input('startDate');
+    $endDate = $request->input('endDate');
+
+    // Query awal
+    $query = Anak::query();
+
+    // Filter berdasarkan tanggal jika diisi
+    if ($startDate && $endDate) {
+        $query->whereBetween('created_at', [$startDate, $endDate]);
     }
+
+    // Search Nama Anak
+    $search = $request->input('search');
+    if ($search) {
+        $query->where('Nama_Anak', 'like', '%' . $search . '%');
+    }
+
+    // Ambil data setelah filtering
+    $data = $query->get();
+
+    return view('Anak.index', [
+        "title" => "Data Anak",
+        "data" => $data,
+    ]);
+}
+
 
     public function store(Request $request)
 {
@@ -100,11 +122,12 @@ public function destroy($id)
 }
 public function edit($id)
 {
-    // Cari data anak berdasarkan ID
     $anak = Anak::findOrFail($id);
 
-    // Tampilkan view edit dengan data anak
-    return view('anak.edit', compact('anak'));
+    // Hitung umur dari Tanggal Lahir
+    $umur = Carbon::parse($anak->Tanggal_Lahir)->age;
+
+    return view('Anak.edit', compact('anak', 'umur'));
 }
 public function update(Request $request, $id)
 {
@@ -119,12 +142,12 @@ public function update(Request $request, $id)
         'Tinggi_Badan' => 'required|numeric|between:0,999.99',  // Format 5,2
         'Berat_Badan' => 'required|numeric|between:0,999.99',   // Format 5,2
     ]);
-
+    
     // Cari data anak berdasarkan ID
     $anak = Anak::findOrFail($id);
+    $anak->Tanggal_Lahir = $request->input('Tanggal_Lahir');
+    $anak->save();
 
-    // Hitung umur berdasarkan Tanggal_Lahir yang baru
-    $validated['Umur'] = \Carbon\Carbon::parse($validated['Tanggal_Lahir'])->age;
 
     // Update data anak
     $anak->update($validated);

@@ -37,11 +37,11 @@
             </div>            
             <div class="row mb-3">
                 <div class="col-sm-3 font-weight-bold">Tinggi Badan:</div>
-                <div class="col-sm-9">{{ $anak->Tinggi_Badan }}</div>
+                <div class="col-sm-9">{{ $anak->Tinggi_Badan }} Cm</div>
             </div>
             <div class="row mb-3">
                 <div class="col-sm-3 font-weight-bold">Berat Badan:</div>
-                <div class="col-sm-9">{{ $anak->Berat_Badan }}</div>
+                <div class="col-sm-9">{{ $anak->Berat_Badan }} Kg</div>
             </div>
             <div class="row mb-3">
                 <div class="col-sm-3 font-weight-bold">Alamat:</div>

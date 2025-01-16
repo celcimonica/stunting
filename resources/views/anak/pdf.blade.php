@@ -35,18 +35,23 @@
         
         <tr>
             <th>Tanggal Lahir</th>
-            <td>{{ $data->Tanggal_Lahir }}</td>
+            <td>{{ \Carbon\Carbon::parse($data->Tanggal_Lahir)->format('d F Y') }}</td>
         </tr>
+        <tr>
+            <th>Umur</th>
+            <td>{{ $data->Umur }} Tahun</td>
+        </tr>
+        
         <tr>
             <th>Jenis Kelamin</th>
             <td>{{ $data->Jenis_Kelamin }}</td>
         </tr>
         <tr>
-            <th>Tinggi_Badan</th>
-            <td>{{ $data->Tinggi_Badan }}</td>
+            <th>Tinggi Badan</th>
+            <td>{{ $data->Tinggi_Badan }} Cm</td>
         </tr> <tr>
-            <th>Berat_Badan</th>
-            <td>{{ $data->Berat_Badan }}</td>
+            <th>Berat Badan</th>
+            <td>{{ $data->Berat_Badan }} Kg</td>
         </tr> 
         <tr>
             <th>Alamat</th>

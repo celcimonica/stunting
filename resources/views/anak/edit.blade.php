@@ -33,10 +33,16 @@
                     <label for="Nama_Anak">Nama Anak</label>
                     <input type="text" class="form-control" id="Nama_Anak" name="Nama_Anak" value="{{ $anak->Nama_Anak }}" required>
                 </div>
+                {{-- <div class="form-group">
+                    <label for="Umur">Umur</label>
+                    <input type="text" class="form-control" id="Umur" name="Umur" value="{{ $Umur }} tahun" readonly>
+                </div> --}}
                 <div class="form-group">
                     <label for="Tanggal_Lahir">Tanggal Lahir</label>
                     <input type="date" class="form-control" id="Tanggal_Lahir" name="Tanggal_Lahir" value="{{ $anak->Tanggal_Lahir }}" required>
                 </div>
+                
+                
                 <div class="form-group">
                     <label for="Jenis_Kelamin">Jenis Kelamin</label>
                     <select class="form-control" id="Jenis_Kelamin" name="Jenis_Kelamin" required>

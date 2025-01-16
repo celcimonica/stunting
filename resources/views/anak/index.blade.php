@@ -8,17 +8,6 @@
     <h1 class="h3 mb-2 text-gray-800">Tables Data Anak</h1>
     <p class="mb-4">Daftar informasi anak terdaftar.</p>
 
-    <!-- DataTables Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3 d-flex justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Pencarian Data</h6>
-            <form class="form-inline" method="GET" action="{{ route('anak.index') }}">
-                <input type="text" id="customSearchInput" name="query" class="form-control form-control-sm mr-2" placeholder="Cari data...">
-                <button type="submit" id="customSearchButton" class="btn btn-primary btn-sm">
-                    <i class="fas fa-search"></i> Cari
-                </button>
-            </form>
-        </div>
 
         @if (session('success'))
             <div class="alert alert-success">
@@ -52,7 +41,16 @@
                     </a>
                 </div>
             </div>
-            
+            <!-- DataTables Example -->
+    <div class="card-body">
+        <div class="input-group">
+            <form action="{{ route('anak.index') }}" method="GET">
+                <input type="text" name="search" placeholder="Cari Nama Anak" value="{{ request('search') }}">
+                <button class="btn btn-primary mb-3 btn-sm mt-3" type="submit">
+                    <i class="fas fa-search fa-sm"></i>
+                </button>
+            </form>
+         </div>
             <!-- Tabel Data Anak -->
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -118,22 +116,38 @@
 @endsection
 
 @section('tambahanJS')
-<script>
-    $(document).ready(function () {
-        $('#dataTable').DataTable({
-            "language": {
-                "search": "Cari:",
-                "searchPlaceholder": "Masukkan kata kunci...",
-                "lengthMenu": "Tampilkan _MENU_ data per halaman",
-                "info": "Menampilkan _START_ hingga _END_ dari _TOTAL_ data",
-                "paginate": {
-                    "first": "Pertama",
-                    "last": "Terakhir",
-                    "next": "Berikutnya",
-                    "previous": "Sebelumnya"
-                }
-            }
+@section('tambahScript')
+        <script>
+            $(document).ready(function() {
+                // Inisialisasi DataTables
+                $('#example1').DataTable({
+                    "pagingType": simple,
+                    "responsive": true,
+                    "autoWidth": false,
+                    "lengthChange": true,
+                    "pageLength": 5,
+                    "lengthMenu": [5, 10, 25, 50],
+                    "searching": true,
+                    "language": {
+                        "search": "Cari:",
+                        "lengthMenu": "Tampilkan MENU data per halaman",
+                        "zeroRecords": "Tidak ada data yang ditemukan",
+                        "info": "Menampilkan START hingga END dari TOTAL data",
+                        "infoEmpty": "Tidak ada data tersedia",
+                        "infoFiltered": "(disaring dari MAX total data)",
+                        "paginate": {
+                            "first": "Pertama",
+                            "last": "Terakhir",
+                            "next": "Berikutnya",
+                            "previous": "Sebelumnya"
+                        }
+                    },
+                
+                    // Memindahkan elemen search ke kanan atas
+            "dom": '<"row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6 text-right"f>>' +
+                   '<"row"<"col-sm-12"tr>>' +
+                   '<"row"<"col-sm-12 col-md-5"i><"col-sm-12 col-md-7"p>>',
         });
     });
-</script>
-@endsection
+        </script>
+        @endsection

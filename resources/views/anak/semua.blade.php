@@ -35,9 +35,10 @@
     <div class="data-container">
         <h3>Data Anak: {{ $item->Nama_Anak }}</h3>
         <div class="data-item"><strong>Tanggal Pendaftaran:</strong> {{ \Carbon\Carbon::parse($item->tanggal_pendaftaran)->format('d F Y') }}</div>
-        <div class="data-item"><strong>Tanggal Lahir:</strong> {{ $item->Tanggal_Lahir }}</div>
+        <div class="data-item"><strong>Tanggal Lahir:</strong> {{ \Carbon\Carbon::parse($item->Tanggal_Lahir)->format('d F Y') }}</div>
+        <div class="data-item"><strong>Umur:</strong> {{ $item->Umur }} Tahun</div>
         <div class="data-item"><strong>Jenis Kelamin:</strong> {{ $item->Jenis_Kelamin }}</div>
-        <div class="data-item"><strong>Tinggi Badan:</strong> {{ $item->Tinggi_Badan }} cm</div>
+        <div class="data-item"><strong>Tinggi Badan:</strong> {{ $item->Tinggi_Badan }} Cm</div>
         <div class="data-item"><strong>Berat Badan:</strong> {{ $item->Berat_Badan }} kg</div>
         <div class="data-item"><strong>Alamat:</strong> {{ $item->Alamat }}</div>
         <div class="data-item"><strong>Nama Orang Tua:</strong> {{ $item->Nama_Orang_Tua }}</div>

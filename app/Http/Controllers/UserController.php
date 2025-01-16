@@ -36,7 +36,6 @@ public function index()
         'name' => 'required|string|max:255',
         'username' => 'required|string|max:255|unique:users',
         'password' => 'required|string|min:4',
-        'role' => 'required|string|in:admin,operator',
     ]);
 
     // Membuat pengguna baru
@@ -44,7 +43,6 @@ public function index()
     $user->name = $validatedData['name'];
     $user->username = $validatedData['username'];
     $user->password = Hash::make($validatedData['password']); // Enkripsi password
-    $user->role = $validatedData['role'];
     $user->save(); // Menyimpan ke database
 
     // Mengalihkan ke halaman index dengan pesan sukses

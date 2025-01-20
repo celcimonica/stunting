@@ -89,6 +89,7 @@ Route::get('/anak/{id}/edit', [AnakController::class, 'edit'])->name('anak.edit'
 
 // Route untuk proses update
 Route::put('/anak/{id}', [AnakController::class, 'update'])->name('anak.update');
+Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('user.destroy');
 
 
 Route::get('/anak/{id}', [AnakController::class, 'show'])->name('anak.show');
@@ -104,4 +105,4 @@ Route::get('/users', [UserController::class, 'index'])->name('user.index')->midd
 
 Route::get('login',[LoginController::class,'loginView'])->name('login');
 Route::post('login',[LoginController::class,'authenticate']);
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');

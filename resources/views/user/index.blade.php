@@ -24,6 +24,7 @@
                         <th>No</th>
                         <th>Name</th>
                         <th>Username</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,7 +33,17 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $dt->name }}</td>
                         <td>{{ $dt->username }}</td>
+                        <div class="btn-group">
+                            <form action="{{ route('user.destroy', $dt->id) }}" method="POST" 
+                                  onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
                     </tr>
+                    
                     @endforeach
                 </tbody>
             </table>

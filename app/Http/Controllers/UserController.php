@@ -49,6 +49,19 @@ public function index()
     return redirect()->route('user.index')->with('success', 'Petugas berhasil ditambahkan.');
 }
 
+public function destroy($id)
+{
+    $user = User::findOrFail($id);  // Cari data berdasarkan ID
+
+    try {
+        $user->delete();  // Hapus data
+        return redirect()->route('user.index')->with('success', 'Data berhasil dihapus.');
+    } catch (\Exception $e) {
+        return redirect()->route('user.index')->with('error', 'Gagal menghapus data.');
+    }
+}
+
+
 
     
     

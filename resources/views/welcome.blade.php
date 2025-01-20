@@ -72,6 +72,7 @@
             {{-- <li><a href="#about">Cek Apakah Anak Mengalami Stunting</a></li> --}}
             <a class="cta-btn d-none d-sm-block" href="{{ url('/pengukuran') }}">Cek Apakah Anak Mengalami Stunting</a>
             {{-- <a class="cta-btn d-none d-sm-block" href="{{ route('kunjungan.create') }}">Isi Data Kunjungan</a> --}}
+            <a class="cta-btn d-none d-sm-block" href="{{ url('/pengukuran') }}">Program Bantuan</a>
 
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
